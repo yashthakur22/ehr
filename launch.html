@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Launch My APP</title>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+</head>
+<body>
+    <script>
+        console.log("Launching authorization...");
+        FHIR.oauth2.authorize({
+            clientId: "caretest", // Ensure this is the correct client_id
+            scope: "launch openid fhirUser patient/*.read",
+            redirectUri: "http://10.1.0.81:8080/index.html"
+        });
+    </script>
+</body>
+</html>
